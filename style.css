@@ -1,0 +1,91 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: linear-gradient(#2e0169,#1b0047,#130041);
+}
+.omni
+{
+    height: 220px;
+    width: 220px;
+    border-radius: 110px;
+    position: absolute;
+    inset: 54px;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.omni:hover, .omni:focus, .omni:active{
+    box-shadow: -1px -1px 500px rgba(0, 0, 0, 0.5);
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+}
+.loader
+{
+    position: relative;
+    display: flex;
+}
+.loader span
+{
+    position: relative;
+    width: 325px;
+    height: 325px;
+    background: #21004d73;
+    border: 6px solid #21004d73;
+    border-radius: 50%;
+    box-shadow: -8px -8px 15px rgba(0, 0, 0, 0.459),
+    8px 8px 25px rgba(0,0,0,0.15);
+    overflow: hidden;
+}
+.loader span::before
+{
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    box-shadow: inset 10px 10px 20px rgba(0,0,0,0.5),
+    inset -5px -5px 15px rgba(255,255,255,1);
+}
+.loader span::after
+{
+    content: '';
+    position: absolute;
+    inset: 40px;
+    background: #500199;
+    border: 3px solid #500199;
+    border-radius: 50%;
+    box-shadow: -8px -8px 25px rgb(68, 3, 143),
+    8px 8px 25px rgba(0,0,0,0.25),
+    inset 3px 3px 10px rgba(0,0,0,0.15),
+    inset -1px -1px 15px rgb(61, 0, 131);
+}
+
+.loader span i
+{
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    filter: blur(5px);
+    background: linear-gradient(#7007e9,#9900ff,#a200ff);
+    animation: animate 1s linear infinite;
+}
+@keyframes animate
+{
+    0%
+    {
+        transform: rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(360deg);
+    }
+}
